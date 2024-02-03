@@ -1,0 +1,46 @@
+1) 
+select ename, deptno from emp
+where deptno = 10
+order by SAL;
+
+2)
+select ename, job, sal from emp
+order by job, sal desc;
+
+3)
+select AVG(sal), COUNT(*), deptno from emp
+group by deptno
+HAVING COUNT(*)>=1;
+
+4)
+select deptno "Τμημα", AVG(2020-SUBSTRING(HIREDATE, 1, 4)) AS PROYPHRESIA from emp
+group by deptno;
+
+
+5)
+select description, emp.ename, emp.job
+from proj, emp, assign
+where proj.proj_code = assign.proj_code
+and assign.empno = emp.empno
+order by description, job;
+
+6) 
+
+SELECT DEPT.DNAME"DEPARTMENT",X.ENAME"MANAGER",EMP.ENAME"EMPLOYEE"
+ FROM EMP X JOIN EMP ON X.EMPNO=EMP.MGR
+ JOIN DEPT ON EMP.DEPTNO=DEPT.DEPTNO;
+
+7)
+select emp.ename, emp.job, dept.loc
+from emp, dept
+where dept.deptno = emp.deptno
+and loc = 'DALLAS';
+
+
+8)
+select emp.ename, description, A_time
+from emp, proj, assign
+where emp.empno = assign.empno
+and assign.proj_code = proj.proj_code
+and Description = 'PAYROLL'
+and A_time > 50;

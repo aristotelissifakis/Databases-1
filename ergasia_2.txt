@@ -1,0 +1,23 @@
+1) 
+SELECT ENAME, SAL "MISTHOS" , COMM "PROMITHEIA", IFNULL(FORMAT((COMM/SAL*100), 2), 0.00)"POSOSTO" FROM EMP;
+
+2)
+SELECT ENAME "EPWNIMO", SAL+IFNULL(COMM, 0) "MHNIAIES APODOXES", 2020-SUBSTRING(HIREDATE, 1, 4) AS PROYPHRESIA FROM EMP
+WHERE (2020-SUBSTRING(HIREDATE, 1, 4))>20; 
+
+
+3)
+SELECT ename "ΕΠΩΝΥΜΟ", job "ΘΕΣΗ", HIREDATE "ΠΡΟΣΛΗΨΗ" FROM EMP
+WHERE job="ANALYST"
+AND HIREDATE LIKE '____-05-__';
+
+4)
+SELECT ename FROM EMP where job in (select job from emp where deptno=10);
+
+5)
+SELECT ename, sal+IFNULL(comm, 0) "σύνολο" from emp
+WHERE SAL>2000;
+
+6)
+SELECT ename,sal from emp
+where JOB='ANALYST' AND SAL>0;
